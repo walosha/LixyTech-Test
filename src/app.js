@@ -1,31 +1,34 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Table } from "reactstrap";
-import { generatePrime } from "./utils";
+import { tableHeaderAndContent } from "./utils";
 import Input from "./component/Input";
 
 const Example = () => {
   const [header, setHeader] = useState([]);
   const [content, setContent] = useState([]);
+  const [error, setError] = useState(false);
 
   const onchange = (text) => {
+    setError(false);
     const value = text.target.value;
-    if (isNaN(value) || !text.target.value.trim()) {
-      console.log("not a number");
+
+    if (!text.target.value.trim()) {
+      setHeader([]);
+      setContent([]);
     }
-    const result = generatePrime(value);
-    let newArr = [];
-    result.forEach((el) => {
-      const res = result.map((num) => num * el);
-      newArr.push(res);
-    });
+
+    if (isNaN(value)) {
+      setError(true);
+    }
+    const { result, newArr } = tableHeaderAndContent(value);
     setHeader(result);
     setContent(newArr);
   };
 
   return (
     <div style={{ padding: "20px", display: "flex", flexDirection: "column" }}>
-      <Input onchange={onchange} />
+      <Input error={error} onchange={onchange} />
       <Table striped>
         <thead>
           <tr>
@@ -37,10 +40,10 @@ const Example = () => {
         </thead>
         <tbody>
           {content.map((el, index) => (
-            <tr>
+            <tr key={index}>
               <th scope="row">{header[index]}</th>
-              {el.map((e) => (
-                <td>{e}</td>
+              {el.map((e, index) => (
+                <td key={index}>{e}</td>
               ))}
             </tr>
           ))}

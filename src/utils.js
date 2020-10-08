@@ -6,7 +6,8 @@ const isPrime = (n) => {
   }
   return true;
 };
-export const generatePrime = (num) => {
+
+const generatePrime = (num) => {
   const arr = [];
   let i = 2;
   while (arr.length < num) {
@@ -17,3 +18,14 @@ export const generatePrime = (num) => {
   }
   return arr;
 };
+
+export function tableHeaderAndContent(value) {
+  const result = generatePrime(value);
+  let newArr = [];
+  result.forEach((el) => {
+    const res = result.map((num) => num * el);
+    newArr.push(res);
+  });
+
+  return { result, newArr };
+}
