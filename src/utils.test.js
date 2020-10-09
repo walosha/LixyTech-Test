@@ -12,10 +12,10 @@ it("Generate Prime Numbers is working", () => {
 
 it("Generate an arrays of table headers and content are working", () => {
   expect(tableHeaderAndContent(2)).toEqual({
-    newArr: [
+    tableContent: [
       [4, 6],
       [6, 9],
     ],
-    result: [2, 3],
+    rowAndColumnheader: [2, 3],
   });
 });
