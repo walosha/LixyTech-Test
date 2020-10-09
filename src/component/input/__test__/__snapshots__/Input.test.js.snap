@@ -5,6 +5,7 @@ exports[`Render Button Successfully  1`] = `
   className="inputContainer"
 >
   <input
+    placeholder="Enter a number"
     type="text"
   />
 </div>
