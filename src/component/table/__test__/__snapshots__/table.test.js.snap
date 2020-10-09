@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Table Successfully  1`] = `
+<table
+  className="table table-striped"
+>
+  <thead>
+    <tr>
+      <th>
+        #
+      </th>
+    </tr>
+  </thead>
+  <tbody />
+</table>
+`;

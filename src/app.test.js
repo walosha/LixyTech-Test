@@ -14,3 +14,11 @@ it("Render Button Successfully ", () => {
   const tree = TestRenderer.create(<App />).toJSON();
   expect(tree).toMatchSnapshot();
 });
+
+describe("HOME TEST", () => {
+  test("renders Table with #", () => {
+    const { getByText } = render(<App />);
+    const linkElement = getByText(/#/i);
+    expect(linkElement).toBeInTheDocument();
+  });
+});
