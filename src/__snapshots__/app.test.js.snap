@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Button Successfully  1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    className="inputContainer"
+  >
+    <input
+      onChange={[Function]}
+      type="text"
+    />
+  </div>
+  <table
+    className="table table-striped"
+  >
+    <thead>
+      <tr>
+        <th>
+          #
+        </th>
+      </tr>
+    </thead>
+    <tbody />
+  </table>
+</div>
+`;

@@ -1,0 +1,10 @@
+.inputContainer {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.error {
+  color: red;
+}

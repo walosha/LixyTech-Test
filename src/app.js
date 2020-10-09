@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Table } from "reactstrap";
 import { tableHeaderAndContent } from "./utils";
-import Input from "./component/Input";
+import Input from "./component/input/Input";
 
-const Example = () => {
+const App = () => {
   const [header, setHeader] = useState([]);
   const [content, setContent] = useState([]);
   const [error, setError] = useState(false);
@@ -21,9 +21,9 @@ const Example = () => {
     if (isNaN(value)) {
       setError(true);
     }
-    const { result, newArr } = tableHeaderAndContent(value);
-    setHeader(result);
-    setContent(newArr);
+    const { rowAndColumnheader, tableContent } = tableHeaderAndContent(value);
+    setHeader(rowAndColumnheader);
+    setContent(tableContent);
   };
 
   return (
@@ -53,4 +53,4 @@ const Example = () => {
   );
 };
 
-export default Example;
+export default App;

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Button Successfully  1`] = `
+<div
+  className="inputContainer"
+>
+  <input
+    type="text"
+  />
+</div>
+`;
